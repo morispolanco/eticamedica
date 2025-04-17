@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - Dilemas Éticos Médicos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlazamos la misma hoja de estilos -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Acerca de Esta Aplicación</h1>
+
+        <p>Esta aplicación web presenta dilemas éticos complejos en el campo de la medicina para fomentar la reflexión y el análisis crítico.</p>
+
+        <h2>Cómo Funciona</h2>
+        <p>Utilizamos la potencia de la API de Google Gemini para generar escenarios realistas y variados cada vez que solicitas un nuevo dilema. Cada escenario incluye:</p>
+        <ul>
+            <li>Un <strong>caso</strong> que describe una situación éticamente desafiante.</li>
+            <li>Una <strong>pregunta</strong> clave que el usuario debe considerar.</li>
+            <li><strong>Opciones múltiples</strong> que representan diferentes cursos de acción posibles.</li>
+        </ul>
+        <p>Una vez que seleccionas una opción, la aplicación (nuevamente, con la ayuda de Google Gemini) genera un <strong>análisis</strong>. Este análisis no busca juzgar tu elección como "correcta" o "incorrecta", sino explorar los principios éticos que podrían estar en juego y las posibles consecuencias de la opción seleccionada.</p>
+
+        <h2>Objetivo</h2>
+        <p>El objetivo principal es servir como una herramienta educativa y de autoexploración para estudiantes, profesionales de la salud y cualquier persona interesada en la ética médica. Permite enfrentarse a situaciones difíciles en un entorno simulado, promoviendo la consideración de diferentes perspectivas éticas (como la autonomía, beneficencia, no maleficencia, justicia, utilitarismo, ética del cuidado, etc.).</p>
+         <p>Los dilemas se generan cubriendo una amplia gama de áreas temáticas dentro de la medicina para ofrecer una visión más completa de los desafíos éticos.</p>
+
+        <h2>Tecnología</h2>
+        <p>La aplicación está construida con HTML, CSS y JavaScript puro para el frontend. Las llamadas a la API de Google Gemini se gestionan de forma segura a través de Vercel Serverless Functions para proteger la clave API.</p>
+
+        <p><em>Nota: Los casos y análisis son generados por una IA y deben considerarse como ejercicios de reflexión, no como asesoramiento médico o ético definitivo.</em></p>
+
+    </div> <!-- Fin container -->
+
+    <footer>
+        <p>Contacto: Moris Polanco - <a href="mailto:mp@ufm.edu">mp@ufm.edu</a></p>
+        <p><a href="https://morispolanco.github.io/mp/" target="_blank" rel="noopener noreferrer">morispolanco.github.io/mp</a></p>
+        <p>© 2024 - Aplicación de Dilemas Éticos</p>
+    </footer>
+
+</body>
+</html>
