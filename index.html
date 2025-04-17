@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilemas Éticos Médicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dilema Ético Médico</h1>
+
+        <div id="loading" class="loading" style="display: none;">
+            Generando dilema... <span class="spinner"></span>
+        </div>
+
+        <div id="dilemma-section">
+            <h2>Caso:</h2>
+            <p id="case-text">Cargando caso...</p>
+
+            <h2>Pregunta:</h2>
+            <p id="question-text"></p>
+
+            <h2>Opciones:</h2>
+            <div id="options-container">
+                <!-- Las opciones se cargarán aquí -->
+            </div>
+        </div>
+
+        <div id="analysis-section" style="display: none;">
+             <div id="loading-analysis" class="loading" style="display: none;">
+                Analizando tu elección... <span class="spinner"></span>
+            </div>
+            <h2>Análisis de tu Elección:</h2>
+            <p id="analysis-text"></p>
+            <button id="new-dilemma-button">Generar Nuevo Dilema</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
