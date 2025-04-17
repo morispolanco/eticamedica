@@ -1,115 +1,265 @@
+/* style.css - Estilos completos */
+
+/* --- Estilos Base y Contenedor --- */
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #f4f7f6; /* Un gris muy claro */
+    color: #333; /* Color de texto principal */
     margin: 0;
-    padding: 20px;
+    padding: 0; /* Quitamos padding del body, se maneja en container y nav/footer */
+    display: flex; /* Usar flexbox para empujar el footer */
+    flex-direction: column; /* Dirección vertical */
+    min-height: 100vh; /* Mínimo la altura de la ventana */
 }
 
 .container {
+    flex-grow: 1; /* Permite que el container crezca */
     max-width: 800px;
-    margin: 20px auto;
-    background-color: #ffffff;
+    margin: 20px auto; /* Centrado horizontal con margen superior/inferior */
+    background-color: #ffffff; /* Fondo blanco para el contenido */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h1, h2 {
-    color: #005f73;
-    border-bottom: 2px solid #e0fbfc;
+    color: #005f73; /* Azul verdoso oscuro para títulos */
+    border-bottom: 2px solid #e0fbfc; /* Línea inferior clara */
     padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-top: 0; /* Evitar doble margen superior */
+    margin-bottom: 20px; /* Espacio debajo de títulos */
 }
 
 h1 {
     text-align: center;
-    color: #0a9396;
+    color: #0a9396; /* Un turquesa más brillante para H1 */
+    margin-bottom: 30px; /* Más espacio debajo del título principal */
 }
 
-#case-text, #question-text, #analysis-text {
-    background-color: #e0fbfc;
+h3 { /* Estilo para posibles títulos de área */
+     color: #0077b6; /* Un azul medio */
+     margin-bottom: 10px;
+}
+
+p, ul, li {
+    margin-bottom: 15px; /* Espaciado entre párrafos y listas */
+}
+
+ul {
+    padding-left: 20px; /* Indentación estándar para listas */
+}
+
+strong {
+     color: #005f73; /* Resaltar texto importante */
+}
+
+/* --- Estilos Barra de Navegación --- */
+.navbar {
+    background-color: #003f5c; /* Azul marino oscuro */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus { /* :focus para accesibilidad */
+    background-color: #005f73; /* Turquesa oscuro al pasar/focalizar */
+    color: #e0fbfc; /* Texto claro al pasar/focalizar */
+    outline: none; /* Quitar outline por defecto si se maneja con background */
+}
+
+/* --- Estilos Sección Dilema --- */
+#case-text,
+#question-text,
+#analysis-text {
+    background-color: #e0fbfc; /* Fondo azul muy claro */
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
-    border-left: 5px solid #94d2bd;
+    border-left: 5px solid #94d2bd; /* Borde izquierdo verdoso */
 }
 
 #options-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 12px; /* Espacio entre botones */
+    margin-bottom: 25px;
 }
 
 .option-button {
-    background-color: #0a9396;
+    background-color: #0a9396; /* Turquesa principal */
     color: white;
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
     text-align: left;
     font-size: 1em;
+    line-height: 1.4; /* Mejorar legibilidad en botones con texto largo */
 }
 
 .option-button:hover {
-    background-color: #005f73;
+    background-color: #0077b6; /* Azul medio al pasar el ratón */
+    transform: translateY(-2px); /* Ligero efecto de elevación */
 }
+
+.option-button:active {
+    transform: translateY(0); /* Efecto de presionar */
+}
+
 
 .option-button:disabled {
-    background-color: #cccccc;
+    background-color: #cccccc; /* Gris claro para deshabilitado */
+    color: #666666;
     cursor: not-allowed;
+    transform: none; /* Sin efecto hover cuando está deshabilitado */
 }
 
 
+/* --- Estilos Sección Análisis --- */
 #analysis-section {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed #ccc; /* Separador punteado */
 }
 
 #new-dilemma-button {
-    background-color: #ee9b00;
+    background-color: #ee9b00; /* Naranja */
     color: white;
     border: none;
     padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 1em;
-    display: block; /* Make it block level */
-    margin: 20px auto 0 auto; /* Center it */
+    font-size: 1.1em; /* Ligeramente más grande */
+    font-weight: bold;
+    display: block;
+    margin: 25px auto 0 auto; /* Centrado y con margen superior */
 }
 
 #new-dilemma-button:hover {
-    background-color: #ca6702;
+    background-color: #ca6702; /* Naranja más oscuro */
 }
 
+#retry-dilemma-button { /* Botón específico para reintentar */
+    background-color: #ae2012; /* Rojo oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-top: 15px;
+}
+#retry-dilemma-button:hover {
+     background-color: #9b2226; /* Rojo más oscuro */
+}
+
+
+/* --- Estilos Indicadores de Carga --- */
 .loading {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     font-style: italic;
     color: #555;
-    display: flex;
+    display: flex; /* Usar flex para alinear texto y spinner */
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Espacio entre texto y spinner */
+    min-height: 50px; /* Evitar saltos de layout */
 }
 
-/* Simple Spinner */
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid rgba(0, 0, 0, 0.1); /* Borde gris claro */
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border-left-color: #0a9396;
-  animation: spin 1s ease infinite;
+  border-left-color: #0a9396; /* Color turquesa para la parte giratoria */
+  animation: spin 1s linear infinite; /* Animación de giro */
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* --- Estilos Pie de Página --- */
+footer {
+    background-color: #003f5c; /* Mismo color que navbar para consistencia */
+    color: #e0fbfc; /* Texto claro sobre fondo oscuro */
+    text-align: center;
+    padding: 25px 15px; /* Más padding vertical */
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    width: 100%;
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+footer p {
+    margin: 8px 0; /* Espaciado vertical entre líneas del footer */
+}
+
+footer a {
+    color: #94d2bd; /* Color verdoso claro para enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffffff; /* Blanco al pasar/focalizar */
+    text-decoration: underline;
+    outline: none;
+}
+
+/* --- Ajustes Responsivos Simples --- */
+@media (max-width: 600px) {
+    .navbar li {
+        margin: 0 8px; /* Menos margen horizontal en nav */
+    }
+    .navbar a {
+        padding: 6px 10px;
+        font-size: 1em; /* Fuente ligeramente más pequeña en nav */
+    }
+    .container {
+        padding: 20px; /* Menos padding en el contenedor */
+        margin: 15px; /* Menos margen alrededor del contenedor */
+    }
+    h1 {
+        font-size: 1.8em; /* Ajustar tamaño de título principal */
+    }
+    h2 {
+         font-size: 1.4em;
+    }
+    .option-button,
+    #new-dilemma-button {
+        font-size: 0.95em; /* Botones ligeramente más pequeños */
+        padding: 10px 15px;
+    }
 }
